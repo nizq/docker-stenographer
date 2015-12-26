@@ -1,0 +1,14 @@
+FROM alpine:3.3
+
+MAINTAINER nizq <ni.zhiqiang@gmail.com>
+
+ADD repositories /etc/apk/
+RUN echo "===> Adding dependency..." && \
+    apk add --update zlib openssl libstdc++ libexecinfo leveldb libaio \
+                     libseccomp curl jq tcpdump snappy && \
+    rm -rf /var/cache/apk/*
+
+ADD steno* /usr/bin/
+ADD libtestimony.so /usr/lib/
+
+VOLUME ["/etc/stenographer", "/data"]
