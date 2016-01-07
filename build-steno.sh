@@ -1,13 +1,14 @@
 #!/bin/sh
 
-HTTPS_PROXY=https://10.0.0.1:8123
+PROXY=http://10.0.0.1:8123
 
 SOURCE=/source
 BUILD_DIR=$SOURCE/build
 FINAL_DIR=$SOURCE/final
 
-export GOPATH=${SOURCE}/go
-STENO_DIR=${GOPATH}/src/github.com/nizq/stenographer
+PKG_USER=github.com/nizq
+PKG_NAME=$PKG_USER/stenographer
+STENO_DIR=$GOPATH/src/$PKG_NAME
 STENOTYPE_DIR=${STENO_DIR}/stenotype
 
 echo "===> Build testimony..."
@@ -23,10 +24,17 @@ cp -f -v libtestimony.so $FINAL_DIR/
 cp -f -v testimony.h /usr/include
 
 echo "===> Install golang/x/net/context..."
-https_proxy=${HTTPS_PROXY} go get golang.org/x/net/context
+https_proxy=${PROXY} go get golang.org/x/net/context
 
 echo "===> Install stenographer..."
-go get github.com/nizq/stenographer
+CODE_BASE=$GOPATH/src/$PKG_USER
+rm -rf $CODE_BASE
+mkdir -p $CODE_BASE
+cd $CODE_BASE
+git clone https://${PKG_NAME}.git
+cd $STENO_DIR
+git checkout auth-ca-based
+GOPATH=$BUILD_DIR/go go get github.com/nizq/stenographer
 
 echo "===> Build stenotype manually..."
 cd $STENOTYPE_DIR
