@@ -1,0 +1,14 @@
+{
+  "Threads": [
+    { "PacketsDirectory": "/data/PKT0"
+    , "IndexDirectory": "/data/IDX0"
+    }
+  ]
+    , "StenotypePath": "/usr/bin/stenotype"
+    , "Interface": "wlo1"
+    , "Port": 1234
+    , "Host": "0.0.0.0"
+    , "Flags": ["--gid=root", "--uid=root"]
+    , "CertPath": "/etc/stenographer/certs"
+}
+
