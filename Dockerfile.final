@@ -11,4 +11,4 @@ RUN echo "===> Adding dependency..." && \
 ADD steno* /usr/bin/
 ADD libtestimony.so /usr/lib/
 
-VOLUME ["/etc/stenographer", "/data"]
+VOLUME ["/etc/stenographer", "/certs", "/data"]

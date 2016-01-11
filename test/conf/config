@@ -9,6 +9,6 @@
     , "Port": 1234
     , "Host": "0.0.0.0"
     , "Flags": ["--gid=root", "--uid=root"]
-    , "CertPath": "/etc/stenographer/certs"
+    , "CertPath": "/certs"
 }
 
