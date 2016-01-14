@@ -1,0 +1,9 @@
+[submodule "vendors/stenographer"]
+	path = vendors/stenographer
+	url = https://github.com/nizq/stenographer.git
+[submodule "vendors/testimony"]
+	path = vendors/testimony
+	url = https://github.com/google/testimony.git
+[submodule "vendors/net"]
+	path = vendors/net
+	url = https://github.com/golang/net.git
