@@ -6,7 +6,7 @@ FINAL_DIR=$BASE_DIR/final
 
 export GOPATH=${BUILD_DIR}/go
 GO_SRC=$GOPATH/src
-VENDORS=$BASE_DIR/src
+VENDORS=$BASE_DIR/vendors
 
 STENO_USER_DIR=$GO_SRC/github.com/nizq
 STENO_SRC_DIR=$STENO_USER_DIR/stenographer
