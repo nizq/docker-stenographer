@@ -8,4 +8,4 @@ docker run --rm -ti \
 cp Dockerfile.final final/Dockerfile
 cp repositories final
 cd final
-docker build -t nizq/steno-alpine .
+docker build -t nizq/steno:alpine .
