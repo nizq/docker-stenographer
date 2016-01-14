@@ -15,13 +15,13 @@ STENOTYPE_SRC_DIR=$STENO_SRC_DIR/stenotype
 rm -rf $BUILD_DIR/*
 
 mkdir -p $GO_SRC/golang.org/x
-ln -sf $VENDORS/net $GO_SRC/golang.org/x
+cp -r -f -v $VENDORS/net $GO_SRC/golang.org/x
 
 mkdir -p $STENO_USER_DIR
-ln -sf $VENDORS/stenographer $STENO_SRC_DIR
+cp -r -f -v $VENDORS/stenographer $STENO_SRC_DIR
 
 echo "===> Build testimony..."
-ln -sf $VENDORS/testimony $BUILD_DIR
+cp -r -f -v $VENDORS/testimony $BUILD_DIR
 cd $BUILD_DIR/testimony/c
 make
 cp -f -v libtestimony.a /usr/lib
